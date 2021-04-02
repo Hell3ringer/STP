@@ -6,6 +6,7 @@ const routeURL = require('./Routes/route')
 const cors = require('cors');
 const professionals = require('./Routes/professionals');
 const PORT=process.env.PORT || 4000;
+const path = require('path');
 let corsOptions = {
   origin: 'http://localhost:4000/' 
 };
