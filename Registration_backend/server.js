@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const routeURL = require('./Routes/route')
 const cors = require('cors');
-const cookieParser = require('cookie-parser')
+
 const professionals = require('./Routes/professionals');
 const PORT=process.env.PORT || 4000;
 const customerroute = require('./Routes/profileretrieve') ;
@@ -31,10 +31,10 @@ const routes5=require('./Routes/api5');
 mongoose.connect(process.env.ACCESS_FINAL, () => console.log('database connected') )
 
 app.use(express.json())
-app.use(cookieParser())
+
 app.use(cors());
 app.use(express.static('build'));
-  app.get('*', (req,res) => {
+app.get('*', (req,res) => {
       res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   })
 app.use('/profileretrieve',customerroute)
